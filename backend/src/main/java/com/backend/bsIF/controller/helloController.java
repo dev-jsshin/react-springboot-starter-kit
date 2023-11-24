@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bs")
-public class helloController {
+public class HelloController {
 
     /*
      * http://localhost:8080/bs
