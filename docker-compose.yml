@@ -17,6 +17,7 @@ services:
             - --collation-server=utf8mb4_unicode_ci
         volumes:
             - ./database/data/mysql/:/var/lib/mysql
+            - ./database/init:/docker-entrypoint-initdb.d
     backend:
         build: ./backend
         restart: always

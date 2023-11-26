@@ -13,16 +13,14 @@ Look up the container list<br>
 $ docker ps -a
 
 # Mysql
-When you create a docker image, you automatically create an account for this project.<br>
+When you create a docker image, the account and initial data for this project are automatically created.<br>
 However, if you use a private DB, you need to create a DB and account by yourself.<br>
 You have written a script to /database/script.sql.<br>
 
-Both docker image users and private DB users must create tables and data for use in this project.<br>
-You have written a script on that path.<br>
-1. /database/ddl.sql
-2. /database/dml.sql<br>
+Additionally, private DB users must create tables and data for use in this project.<br>
 
-Docker image users will be modified to run ddl and dml scripts automatically in the future.   
+1. /database/init/ddl.sql
+2. /database/init/dml.sql
 <br>
 
 # Springboot
@@ -31,6 +29,8 @@ Local environments use 8080 ports and docker images use 9000 ports.
 <br>
 
 # History 
+
+####  2023-11-26 : Add Docker-compose Mysql init data settings
 
 ####  2023-11-25 : Add backend-related Docker
 
