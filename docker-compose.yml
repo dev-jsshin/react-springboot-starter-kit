@@ -11,11 +11,25 @@ services:
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./frontend/build:/usr/share/nginx/html
+
+    frontend:
+        build: ./frontend/
+        container_name: frontend
+        environment:
+            NODE_ENV: development
+            CHOKIDAR_USEPOLLING: true
+        expose:
+            - 4000
+        volumes:
+            - './frontend:/frontend'
+            - '/frontend/node_modules'
+            
+
     mysql:
         image: mysql:8.0.34
         restart: always
         ports:
-          - "3306:3306"
+            - "3306:3306"
         environment:
             MYSQL_DATABASE: db
             MYSQL_USER: user      
@@ -29,11 +43,12 @@ services:
         volumes:
             - ./database/data/mysql/:/var/lib/mysql
             - ./database/init:/docker-entrypoint-initdb.d
+            
     backend:
         build: ./backend
         restart: always
         ports:
-          - "9000:9000"
+            - "9000:9000"
         depends_on:
             - mysql
         environment:
@@ -41,4 +56,5 @@ services:
             SPRING_DATASOURCE_USERNAME: user
             SPRING_DATASOURCE_PASSWORD: password
             SPRING_PROFILES_ACTIVE: dev
+            FRONTEND_URL: localhost:4000
         
