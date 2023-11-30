@@ -18,6 +18,9 @@ services:
         environment:
             NODE_ENV: development
             CHOKIDAR_USEPOLLING: true
+            BACKEND_URL: localhost
+            BACKEND_PORT: 9000
+            BACKEND_CONTEXT_PATH: /api
         expose:
             - 4000
         volumes:
