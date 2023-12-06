@@ -10,24 +10,20 @@ services:
             - backend
         volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            - ./frontend/build:/usr/share/nginx/html
+            - ./frontend/dist:/usr/share/nginx/html
 
     frontend:
-        build: ./frontend/
+        build: ./frontend
         container_name: frontend
         environment:
             NODE_ENV: development
             CHOKIDAR_USEPOLLING: true
-            BACKEND_URL: localhost
-            BACKEND_PORT: 9000
-            BACKEND_CONTEXT_PATH: /api
         expose:
             - 4000
         volumes:
             - './frontend:/frontend'
             - '/frontend/node_modules'
             
-
     mysql:
         image: mysql:8.0.34
         restart: always
