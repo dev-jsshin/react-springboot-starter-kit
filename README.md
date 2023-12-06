@@ -31,21 +31,22 @@ Local environments use 8080 ports and docker images use 9000 ports.
 # React
 Local uses 3000 ports and dockers use 4000 ports.<br>
 
-Environment variable files for local, docker can be referenced using env-cmd.<br>
-local : npm run [start, build] (.env.local) <br>
-docker : npm run [dev_start, dev-build] (.env.dev) <br>
+local : npm run start (.env.local)<br>
+docker : npm run build (.env.dev)<br>
 
-All users run the following on the frontend path. <br>
-$ npm install<br>
+All users run the following on the frontend path.<br>
+$ npm install
 
 When you deploy docker users, deploy them with the following commands.<br>
-$ npm run dev_build
+$ npm run build
 
 If you run it with the docker container and change the source locally, it will automatically be reflected.
 <br>
 <br>
 
 # History 
+
+####  2023-12-07 : Add webpack and babel Custom settings
 
 ####  2023-11-27 : React, Springboot interlocking, Add Nginx-related Docker
 
