@@ -7,16 +7,16 @@ const dotenv = require('dotenv');
 
 module.exports = (env, options) => {
 
-  const { DEV } = env;
+  const { MODE } = env;
 
-  if (DEV == "dev") {
+  if (MODE == "development") {
     require('dotenv').config({path: './.env.dev'})
-  } else if (DEV == "local") {
-    require('dotenv').config({path: './.env.local'})
+  } else if (MODE == "production") {
+    require('dotenv').config({path: './.env.prod'})
   }
   
   return {
-    mode: 'development',
+    mode: MODE,
     target: 'web',
 
     entry: {

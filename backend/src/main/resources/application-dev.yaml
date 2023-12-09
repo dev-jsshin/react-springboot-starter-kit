@@ -1,13 +1,13 @@
 server:
-  port: 9000
+  port: 8080
 frontend:
-  url: ${FRONTEND_URL}
+  url: localhost:3000
 
 spring:
   datasource:
-    url: ${DB_CONNECTION_URL}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/db
+    username: user
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

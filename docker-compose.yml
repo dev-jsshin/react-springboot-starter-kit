@@ -16,7 +16,7 @@ services:
         build: ./frontend
         container_name: frontend
         environment:
-            NODE_ENV: development
+            NODE_ENV: production
             CHOKIDAR_USEPOLLING: true
         expose:
             - 4000
@@ -54,6 +54,6 @@ services:
             SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db
             SPRING_DATASOURCE_USERNAME: user
             SPRING_DATASOURCE_PASSWORD: password
-            SPRING_PROFILES_ACTIVE: dev
+            SPRING_PROFILES_ACTIVE: prod
             FRONTEND_URL: localhost:4000
         
