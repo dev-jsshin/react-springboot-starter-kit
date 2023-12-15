@@ -25,14 +25,14 @@ Additionally, private DB users must create tables and data for use in this proje
 
 # Springboot
 Profile Is Detached.<br>
-Local environments use 8080 ports and docker images use 9000 ports.
+Dev environments use 8080 ports and docker images use 9000 ports.
 <br>
 
 # React
-Local uses 3000 ports and dockers use 4000 ports.<br>
+Dev uses 3000 ports and dockers use 4000 ports.<br>
 
-local : npm run start (.env.local)<br>
-docker : npm run build (.env.dev)<br>
+dev : npm run start (.env.dev)<br>
+docker : npm run build (.env.prod)<br>
 
 All users run the following on the frontend path.<br>
 $ npm install
@@ -42,16 +42,3 @@ $ npm run build
 
 If you run it with the docker container and change the source locally, it will automatically be reflected.
 <br>
-<br>
-
-# History 
-
-####  2023-12-07 : Add webpack and babel Custom settings
-
-####  2023-11-27 : React, Springboot interlocking, Add Nginx-related Docker
-
-####  2023-11-26 : Add Docker-compose Mysql init data settings, Add React Project
-
-####  2023-11-25 : Add backend-related Docker
-
-####  2023-11-24 : Add database-related Docker

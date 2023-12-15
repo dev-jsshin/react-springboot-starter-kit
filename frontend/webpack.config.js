@@ -41,7 +41,23 @@ module.exports = (env, options) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           loader: "babel-loader", 
-        }
+        },
+        {
+          test: /\.pcss$/,
+          use: [
+            { loader: 'style-loader' },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                modules: {
+                  localIdentName: '[name]__[local]_[hash:8]',
+                },
+              },
+            },
+            { loader: 'postcss-loader' },
+          ],
+        },
       ],
     },
 

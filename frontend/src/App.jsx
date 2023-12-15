@@ -1,29 +1,27 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import React from 'react';
+import styled from "styled-components";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Sidebar from "./components/Sidebar/Sidebar";
+import Home from './pages/home/home';
+
+const Center = styled.div`
+  height: 100vh;
+  display: flex;
+`
 
 function App() {
-  const [bsData, setBsData] = useState([]);
-  const [dbData, setDbData] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://' + BACKEND_URL + ':' + BACKEND_PORT + BACKEND_CONTEXT_PATH + '/bs').then(reponse => {
-      setBsData(reponse.data);
-    });
-
-    axios.get('http://' + BACKEND_URL + ':' + BACKEND_PORT + BACKEND_CONTEXT_PATH +  '/db/connection').then(reponse => {
-      setDbData(reponse.data.data);
-    });
-  }, []);
-
 
   return (
-    <div className="App">
-        Server URL : {BACKEND_URL} <br></br>
-        Backend Interlocking : {bsData} <br></br>
-        Backend-DB Interlocking : {dbData}
-    </div>
+    <BrowserRouter>
+      <Center>
+        <Sidebar/>    
+        <Routes>
+            <Route path='/' exact element={<Home />} />
+        </Routes>
+      </Center>
+    </BrowserRouter>
   );
 }
 
-export default App;
+
+export default App; 
