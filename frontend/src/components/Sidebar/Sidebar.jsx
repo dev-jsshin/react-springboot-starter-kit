@@ -25,7 +25,7 @@ function Sidebar() {
 
   const menus = [
     { name: "Home", path: "/" },
-    { name: "Empty", path: "/Empty" }
+    { name: "Counter", path: "/counter" }
   ];
   return (
     <Side>

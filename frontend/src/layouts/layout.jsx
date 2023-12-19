@@ -14,10 +14,10 @@ function Layout({ children }) {
     return (
       <>
         <Header />
-            <Center>
-                <Sidebar />
-                <main>{children}</main>
-            </Center>
+        <Center>
+            <Sidebar />
+            <main>{children}</main>
+        </Center>
         <Footer />
       </>
     );
