@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../api';
 
 import styles from './home.styles.pcss';
 
@@ -31,18 +31,25 @@ function Home() {
     }
   ];
 
+  async function getData() {
+    try {
+      const response =  await api.get('/bs');
+      setBct("STATUS : " + response.data)
+    } catch(err) {
+      setBct("STATUS : " + err)
+    }
+
+    try {
+      const response = await api.get('/db/connection');
+      setDct("STATUS : " + response.data.data);
+    } catch(err) {
+      setDct("STATUS : " + err);
+    }
+  }
+
   useEffect(() => {
-
-    axios.get('http://' + BACKEND_URL + ':' + BACKEND_PORT + BACKEND_CONTEXT_PATH + '/bs').then(reponse => {  
-      setBct("STATUS : " + reponse.data)
-    });
-
-    axios.get('http://' + BACKEND_URL + ':' + BACKEND_PORT + BACKEND_CONTEXT_PATH +  '/db/connection').then(reponse => {
-      setDct("STATUS : " + reponse.data.data);
-    });
+    getData();
   });
-
-  
 
   return (
     <>
