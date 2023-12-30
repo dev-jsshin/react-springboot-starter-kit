@@ -1,6 +1,6 @@
-package com.backend.common.exception;
+package com.backend.core.common.exception;
 
-import com.backend.common.enums.StatusCode;
+import com.backend.core.common.enums.StatusCode;
 import lombok.Getter;
 
 @Getter

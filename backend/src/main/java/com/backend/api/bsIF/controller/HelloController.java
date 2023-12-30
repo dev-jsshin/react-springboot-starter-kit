@@ -1,8 +1,8 @@
-package com.backend.bsIF.controller;
+package com.backend.api.bsIF.controller;
 
-import com.backend.common.dto.DataResponseDto;
-import com.backend.common.enums.StatusCode;
-import com.backend.common.exception.GeneralException;
+import com.backend.core.common.dto.DataResponseDto;
+import com.backend.core.common.enums.StatusCode;
+import com.backend.core.common.exception.GeneralException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +23,7 @@ public class HelloController {
     }
 
     /*
-    * http://localhost:8080/bs/required"
+    * http://localhost:8080/bs/required
     */
     @GetMapping(value = "/required")
     public String test(@RequestBody(required = true) String param) throws Exception {
@@ -31,7 +31,7 @@ public class HelloController {
     }
 
     /*
-     * http://localhost:8080/bs/resdto"
+     * http://localhost:8080/bs/resdto
      *
      *  "success": true,
      *  "code": 0,
@@ -48,7 +48,7 @@ public class HelloController {
     }
 
     /*
-     * http://localhost:8080/bs/resdto/error/custom"
+     * http://localhost:8080/bs/resdto/error/custom
      *
      *  "success": false,
      *  "code": 10001,
@@ -64,7 +64,7 @@ public class HelloController {
     }
 
     /*
-     * http://localhost:8080/bs/resdto/error/exception"
+     * http://localhost:8080/bs/resdto/error/exception
      *
      *  "success": false,
      *  "code": 20000,

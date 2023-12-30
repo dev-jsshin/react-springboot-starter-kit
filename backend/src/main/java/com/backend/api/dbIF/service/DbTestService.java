@@ -1,6 +1,6 @@
-package com.backend.dbIF.service;
+package com.backend.api.dbIF.service;
 
-import com.backend.dbIF.mapper.DbTestMapper;
+import com.backend.api.dbIF.mapper.DbTestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

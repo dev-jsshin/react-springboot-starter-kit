@@ -1,7 +1,7 @@
-package com.backend.dbIF.controller;
+package com.backend.api.dbIF.controller;
 
-import com.backend.common.dto.DataResponseDto;
-import com.backend.dbIF.service.DbTestService;
+import com.backend.api.dbIF.service.DbTestService;
+import com.backend.core.common.dto.DataResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,7 @@ public class DbTestController {
     DbTestService dbTestservice;
 
     /*
-     * http://localhost:8080/db/connection"
+     * http://localhost:8080/db/connection
      *
      * "success": true,
      * "code": 0,

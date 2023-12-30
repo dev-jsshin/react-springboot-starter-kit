@@ -1,12 +1,9 @@
-package com.backend.common.dto;
+package com.backend.core.common.dto;
 
-import com.backend.common.enums.StatusCode;
-import lombok.AllArgsConstructor;
+import com.backend.core.common.enums.StatusCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-
-import java.net.http.HttpHeaders;
 
 @Getter
 @ToString
