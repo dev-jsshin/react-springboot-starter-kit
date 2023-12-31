@@ -1,6 +1,6 @@
-package com.backend.core.common.enums;
+package com.backend.module.common.enums;
 
-import com.backend.core.common.exception.GeneralException;
+import com.backend.module.common.exception.GeneralException;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

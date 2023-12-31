@@ -1,8 +1,8 @@
-package com.backend.core.config;
+package com.backend.module.config;
 
-import com.backend.core.common.dto.ErrorResponseDto;
-import com.backend.core.common.enums.StatusCode;
-import com.backend.core.common.exception.GeneralException;
+import com.backend.module.common.dto.ErrorResponseDto;
+import com.backend.module.common.enums.StatusCode;
+import com.backend.module.common.exception.GeneralException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

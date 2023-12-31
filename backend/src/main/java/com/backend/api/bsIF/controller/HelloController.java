@@ -1,8 +1,8 @@
 package com.backend.api.bsIF.controller;
 
-import com.backend.core.common.dto.DataResponseDto;
-import com.backend.core.common.enums.StatusCode;
-import com.backend.core.common.exception.GeneralException;
+import com.backend.module.common.dto.DataResponseDto;
+import com.backend.module.common.enums.StatusCode;
+import com.backend.module.common.exception.GeneralException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

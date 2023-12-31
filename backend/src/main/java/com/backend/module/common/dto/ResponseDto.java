@@ -1,6 +1,6 @@
-package com.backend.core.common.dto;
+package com.backend.module.common.dto;
 
-import com.backend.core.common.enums.StatusCode;
+import com.backend.module.common.enums.StatusCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

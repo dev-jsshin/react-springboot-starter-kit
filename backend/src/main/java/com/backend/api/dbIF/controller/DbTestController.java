@@ -1,7 +1,7 @@
 package com.backend.api.dbIF.controller;
 
 import com.backend.api.dbIF.service.DbTestService;
-import com.backend.core.common.dto.DataResponseDto;
+import com.backend.module.common.dto.DataResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
