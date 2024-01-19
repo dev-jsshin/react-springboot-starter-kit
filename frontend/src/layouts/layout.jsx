@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Header from './header/header';
 import Footer from './footer/footer';
-import Sidebar from "../components/Sidebar/Sidebar";
+import SidebarLayout from "../components/Sidebar/Sidebar";
 
 const Center = styled.div`
   height: 94vh;
@@ -15,8 +15,8 @@ function Layout({ children }) {
       <>
         <Header />
         <Center>
-            <Sidebar />
-            <main>{children}</main>
+          <SidebarLayout />
+          <main>{children}</main>
         </Center>
         <Footer />
       </>

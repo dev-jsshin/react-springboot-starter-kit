@@ -1,54 +1,41 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import styled from "styled-components";
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { Link } from 'react-router-dom';
 
-import SidebarItem from './SidebarItem'
+function SidebarLayout() {
 
-const Side = styled.div`
-  display: flex;
-  border-right: 1px solid #e0e0e0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 7%;
-`
-
-const Menu = styled.div`
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-`
-
-function Sidebar() {
-  
   const pathName = useLocation().pathname;
 
   const menus = [
-    { name: "Home", path: "/" },
-    { name: "Counter", path: "/counter" }
+    { parent_name: "home", child : [{ child_name : "home", path : "/"}] },
+    { parent_name: "counter", child : [{ child_name : "Counter", path : "/counter"}] }
   ];
+
   return (
-    <Side>
-      <Menu>
-        {menus.map((menu, index) => {
-          return (
-            <NavLink
-              exact
-              style={{color: "gray", textDecoration: "none"}}
-              to={menu.path}
-              key={index}
-              activeStyle={{color: "black"}}
-            >
-              <SidebarItem
-                menu={menu}
-                isActive={pathName === menu.path ? true : false}
-              />
-            </NavLink>
-          );
-        })}
+    <Sidebar>
+      <Menu menuItemStyles={{
+              button: ({ level, active, disabled }) => {
+                return {
+                  color: active ? '#448FFF' : undefined ,
+                  borderRight : active ? '2px solid #448FFF' : undefined ,
+                  backgroundColor: active ? '#E5F6FF' : undefined ,
+                  "&:hover": {
+                     backgroundColor: "#E5F6FF"
+                   },
+                };
+              },
+      }}>
+        {menus.map((parents) => (
+          <SubMenu label={parents.parent_name}>
+            {parents.child.map((child) => (
+              <MenuItem active={pathName === child.path} component={<Link to={child.path} />}> {child.child_name} </MenuItem>
+            ))}
+          </SubMenu>
+        ))}
       </Menu>
-    </Side>
+    </Sidebar>
   );
 }
 
-export default Sidebar;
+export default SidebarLayout;
